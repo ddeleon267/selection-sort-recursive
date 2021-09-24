@@ -1,12 +1,12 @@
 def selection_sort_recursive(arr)
-  return [] if arr.empty?
+  return [] if arr.empty? # stop once there are no more items
 
-  min = arr.min
-  idx = arr.index(min)
-  arr.delete_at(idx)
+  min = arr.min # find min value  
+  idx = arr.index(min) # find location of min value
+  arr.delete_at(idx) # remove min val from original
   
-  result = selection_sort_recursive(arr)
-  result.unshift(min)
+  result = selection_sort_recursive(arr) ## pass subsequent values and repeat
+  result.unshift(min) # adds minimum back to new array, at beginning
 end
 
 if __FILE__ == $PROGRAM_NAME
